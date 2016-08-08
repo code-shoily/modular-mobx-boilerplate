@@ -46,9 +46,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "firebase": "^3.2.1",
-    "google-map-react": "^0.16.3",
-    "jquery": "^3.1.0",
     "mobx": "^2.4.1",
     "mobx-react": "^3.5.1",
     "mobx-react-devtools": "^4.2.4",
@@ -58,13 +55,8 @@
     "react": "^15.3.0",
     "react-addons-shallow-compare": "^15.3.0",
     "react-dom": "^15.3.0",
-    "react-google-maps": "^4.11.0",
-    "react-googlemaps": "^0.4.0",
     "react-router": "^2.6.1",
-    "reactfire": "^1.0.0",
     "reactify": "^1.1.1",
-    "sammy": "^0.7.6",
-    "semantic-react": "^0.8.0",
     "superagent": "^2.1.0",
     "uuid": "^2.0.2"
   }
