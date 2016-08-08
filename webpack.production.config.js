@@ -5,7 +5,7 @@ var LessPluginCleanCSS = require('less-plugin-clean-css');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     './src/index'
@@ -18,16 +18,14 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.less'],
     alias: {
-      'styles': __dirname + '/src/styles',
-      'images': __dirname + '/src/images',
-      'components': __dirname + '/src/components',
-      'libs': __dirname + '/src/libs',
-      'stores': __dirname + '/src/stores'
+      'base': __dirname + '/src/base',
+      'counter': __dirname + '/src/counter',
+      'todo': __dirname + '/src/todo',
     }
   },
   lessLoader: {
     lessPlugins: [
-      new LessPluginAutoPrefix({ browsers: ["last 2 versions"] }),
+      new LessPluginAutoPrefix({ browsers: ['last 2 versions'] }),
       new LessPluginCleanCSS({ advanced: true })
     ]
   },
@@ -35,7 +33,7 @@ module.exports = {
     loaders: [
       {
         test: /\.less$/,
-        loader: "style!css!less"
+        loader: 'style!css!less'
       },
       {
         test: /\.jsx?$/,
@@ -52,12 +50,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery"
-    })
+    //new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin()
   ],
-  new webpack.optimize.CommonsChunkPlugin('common.js'),
-  new webpack.optimize.DedupePlugin(),
-  new webpack.optimize.UglifyJsPlugin(),
-  new webpack.optimize.AggressiveMergingPlugin()
 };
