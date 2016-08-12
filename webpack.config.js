@@ -5,11 +5,16 @@ var LessPluginCleanCSS = require('less-plugin-clean-css');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
     './src/index'
   ],
+  devServer: {
+    stats: 'errors-only',
+    port: 3000,
+    inline: true,
+    hot: true
+  },
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
@@ -17,11 +22,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.less'],
-    alias: {
-      'base': __dirname + '/src/base',
-      'counter': __dirname + '/src/counter',
-      'todo': __dirname + '/src/todo',
-    }
+    root: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')]
   },
   lessLoader: {
     lessPlugins: [

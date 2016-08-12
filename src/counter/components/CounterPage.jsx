@@ -7,7 +7,6 @@ import {observer, inject} from 'mobx-react'
 export default class CounterPage extends Component {
   render() {
     let counterModel = this.props.counterModel
-
     return (
       <div>
         {counterModel.counter} 
