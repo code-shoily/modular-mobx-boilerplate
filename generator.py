@@ -66,7 +66,7 @@ export default class {1}Model {{
   }}
 }}
 
-export const {0}Model = new {0}Model()
+export const {0}Model = new {1}Model()
   """.format(to_camel_case(app), to_pascal_case(app))
 
 
@@ -127,14 +127,14 @@ def main():
       return
 
   for f in files:
-    print f
     with file("src/{}/{}".format(app_folder, f), "w") as fin:
       fin.write(code_files[f])
 
-  print("=== === Please add the following lines in the appropriate location === ===")
-  print("import {}Routes from '{}/routes'")
-  print("import {}Model from '{}/models/{}'")
-  print("=== === Add the stores and routers in appropriate locations as marked === ===")
+  print("\n=== === Please add the following lines in the appropriate location === ===\n")
+  print("\n/* ------ {} APP --- --- */\n".format(arg.upper()))
+  print("import {}Routes from '{}/routes'".format(to_camel_case(arg), to_kebab_case(arg)))
+  print("import {0}Model from '{1}/models/{1}'".format(to_camel_case(arg), to_kebab_case(arg)))
+  print("\n=== === Add the stores and routers in appropriate locations as marked === ===\n")
 
 if __name__ == "__main__":
   main()
