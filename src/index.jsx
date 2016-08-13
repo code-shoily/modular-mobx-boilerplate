@@ -6,23 +6,22 @@ import {Provider} from 'mobx-react'
 /* ------ IMPORT ROUTES FROM EVERYONE ------ */
 import baseRoutes from 'base/routes'
 import counterRoutes from 'counter/routes'
-import todoRoutes from 'todo/routes'
 
 /* ------ IMPORT STORES FROM EVERYONE --- --- */
-import CounterModel from 'counter/models/counter'
+import counterModel from 'counter/models/counter'
 
 
 const stores = {
   /*------ Initiate the Store ------ */
-  counterModel: new CounterModel(),
+  counterModel,
 }
+
 
 const App = (
   <Provider {...stores}>
     <Router history={hashHistory}>
       {/* Other routes should come before base routes */}
       {counterRoutes}
-      {todoRoutes}
       {baseRoutes}
     </Router>
   </Provider>

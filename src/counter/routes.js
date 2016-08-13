@@ -4,10 +4,10 @@ import {Route, IndexRoute} from 'react-router'
 import CounterBase from 'counter/components/CounterBase'
 import CounterPage from 'counter/components/CounterPage'
 
-const routes = (
+const counterRoutes = (
   <Route path="/counter" component={CounterBase}>
     <IndexRoute component={CounterPage} />
   </Route>
 )
 
-export default routes
+export default counterRoutes

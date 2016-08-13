@@ -8,18 +8,20 @@ export default class CounterModel {
     this.counter = counter
   }
 
-  @action("Increments the counter")
+  @action('Increments the counter')
   increment() {
     this.counter++
   }
 
-  @action("Decrements the counter")
+  @action('Decrements the counter')
   decrement() {
     this.counter--
   }
 
-  @action("Resets the counter")
+  @action('Resets the counter')
   reset() {
     this.counter = 0
   }
 }
+
+export const counterModel = new CounterModel()

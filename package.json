@@ -4,7 +4,7 @@
   "description": "The mobx boilerplate I am currently using",
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack-dev-server --watch --progress --config webpack.config.js"
+    "dev": "webpack-dev-server --watch --progress --inline --hot --config webpack.config.js"
   },
   "repository": {
     "type": "git",
