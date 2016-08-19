@@ -1,6 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom';
-import {Router, Route, hashHistory} from 'react-router'
+import {Router, Route, hashHistory, browserHistory} from 'react-router'
 import {Provider} from 'mobx-react'
 
 import baseRoutes from 'base/routes'

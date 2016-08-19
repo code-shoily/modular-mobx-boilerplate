@@ -77,14 +77,14 @@ import {{ Route, IndexRoute }} from 'react-router'
 import {0}Base from './components/{0}Base'
 import {0}Page from './components/{0}Page'
 
-const routes = (
-  <Route path="/{0}" component={{ {0}Base }}>
+const {1}Routes = (
+  <Route path="/{2}" component={{ {0}Base }}>
     <IndexRoute component={{ {0}Page }} />
   </Route>
 )
 
-export default routes
-  """.format( to_pascal_case(app) )
+export default {1}Routes
+  """.format(to_pascal_case(app), to_camel_case(app), to_kebab_case(app).lower())
 
   return {
     "routes.js": router,

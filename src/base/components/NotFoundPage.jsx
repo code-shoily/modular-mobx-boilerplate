@@ -5,7 +5,7 @@ export default class NotFoundPage extends Component {
   render() {
     return (
         <div>
-          Not Found
+          NOT FOUND
         </div>
     )
   }
