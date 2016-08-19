@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {StyleSheet, css} from 'aphrodite'
-import CounterCard from './CounterCard'
 
 import {observer, inject} from 'mobx-react'
 
@@ -13,14 +12,23 @@ export default class CounterPage extends Component {
 
     let S = StyleSheet.create({
       container: {
-        height: '40vh',
-        width: '100vw',
+        display: 'flex',
+        margin: '2em 0'
+      },
+      counter: {
+        padding: '2rem',
+        borderRadius: 12,
+        background: '#eee',
       }
     })
 
     return (
       <div className={css(S.container)}>
-        <CounterCard />
+        <button onClick={() => counterModel.increment()}>+</button>
+        <span className={css(S.counter)} onDoubleClick={() => counterModel.reset()}>
+          {counterModel.counter}
+        </span>
+        <button onClick={() => counterModel.decrement()}>-</button>
       </div>
     )
   }

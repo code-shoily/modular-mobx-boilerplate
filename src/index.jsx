@@ -7,7 +7,7 @@ import baseRoutes from 'base/routes'
 
 /* ------ COUNTER APP --- --- */
 import counterRoutes from 'counter/routes'
-import counterModel from 'counter/models/counter'
+import {counterModel} from 'counter/models/counter'
 
 
 const stores = {

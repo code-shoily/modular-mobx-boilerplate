@@ -133,7 +133,7 @@ def main():
   print("\n=== === Please add the following lines in the appropriate location === ===\n")
   print("\n/* ------ {} APP --- --- */\n".format(arg.upper()))
   print("import {}Routes from '{}/routes'".format(to_camel_case(arg), to_kebab_case(arg)))
-  print("import {0}Model from '{1}/models/{1}'".format(to_camel_case(arg), to_kebab_case(arg)))
+  print("import {{{0}Model}} from '{1}/models/{1}'".format(to_camel_case(arg), to_kebab_case(arg)))
   print("\n=== === Add the stores and routers in appropriate locations as marked === ===\n")
 
 if __name__ == "__main__":
