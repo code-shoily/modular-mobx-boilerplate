@@ -5,9 +5,10 @@ import DevTools from 'mobx-react-devtools'
 
 export default class BasePage extends Component {
   render() {
+    let devtools = process.env.NODE_ENV === 'development' ? <DevTools /> : null
     return (
       <div>
-        <DevTools />
+        {devtools}
         <div>
           <Link to="/">Home</Link>
           <Link to="/counter">Counter</Link>

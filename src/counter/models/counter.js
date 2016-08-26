@@ -2,7 +2,7 @@ import {observable, action} from 'mobx'
 
 
 export default class CounterModel {
-  @observable counter 
+  @observable counter
   constructor(counter=0) {
     this.counter = counter
   }
