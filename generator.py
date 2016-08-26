@@ -13,7 +13,8 @@ def to_camel_case(snake_str):
 
 
 def to_pascal_case(snake_str):
-  return to_camel_case(snake_str).capitalize()
+    components = to_kebab_case(snake_str).split('-')
+    return "".join(x.title() for x in components)
 
 
 def code_table(app):
