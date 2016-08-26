@@ -1,14 +1,17 @@
+require('babel-polyfill')
+
 var path = require('path');
 var webpack = require('webpack');
 
+var CleanWebpackPlugin = require('clean-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var LessPluginCleanCSS = require('less-plugin-clean-css');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 
+
 module.exports = {
-  devtool: 'eval',
-  entry: [
-    './src/index'
-  ],
+  devtool: 'cheap-module-source-map',
+  entry: './src/index',
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
@@ -32,7 +35,7 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        loaders: ['babel',],
         include: path.join(__dirname, 'src')
       },
       {
@@ -45,9 +48,19 @@ module.exports = {
     ]
   },
   plugins: [
-    //new webpack.optimize.CommonsChunkPlugin('common.js'),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin()
+      new CleanWebpackPlugin(path.join(__dirname, 'dist')),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify('production'),
+        },
+      }),
+      new ExtractTextPlugin('[name].css'),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+        },
+      }),
   ],
 };

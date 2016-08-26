@@ -1,15 +1,21 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 
-import BasePage from 'base/components/BasePage'
-import IndexPage from 'base/components/IndexPage'
-import NotFoundPage from 'base/components/NotFoundPage'
+import BasePage from './components/BasePage'
+import IndexPage from './components/IndexPage'
+import NotFoundPage from './components/NotFoundPage'
 
 
 const routes = (
-  <Route path="/" component={BasePage}>
+  <Route
+    component={BasePage}
+    path="/"
+  >
     <IndexRoute component={IndexPage} />
-    <Route path="*" component={NotFoundPage} />
+    <Route
+      component={NotFoundPage}
+      path="*"
+    />
   </Route>
 )
 

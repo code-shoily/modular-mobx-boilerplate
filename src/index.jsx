@@ -1,30 +1,33 @@
 import React from 'react'
-import {render} from 'react-dom';
-import {Router, Route, hashHistory, browserHistory} from 'react-router'
-import {Provider} from 'mobx-react'
-
-import baseRoutes from 'base/routes'
-
-/* ------ COUNTER APP --- --- */
-import counterRoutes from 'counter/routes'
-import {counterModel} from 'counter/models/counter'
+import {render} from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import App from './App'
+import RedBox from 'redbox-react'
+import a11y  from 'react-a11y'
+import {whyDidYouUpdate} from 'why-did-you-update'
 
 
-const stores = {
-  /*------ Initiate the Store ------ */
-  counterModel,
+const root = document.getElementById('root')
+
+if(process.env.NODE_ENV === 'development') {
+  a11y(React)
+  whyDidYouUpdate(React)
+  try {
+    render(<AppContainer><App /></AppContainer>, root)
+  } catch (e) {
+    render(<RedBox error={e} />, root)
+  }
+} else {
+  render(<App />, root)
 }
 
-
-const App = (
-  <Provider {...stores}>
-    <Router history={hashHistory}>
-      {/* Other routes should come before base routes */}
-      {counterRoutes}
-      {baseRoutes}
-    </Router>
-  </Provider>
-)
-
-
-render(App, document.getElementById('root'))
+if (module.hot) {
+  module.hot.accept('./App.js', () => {
+    let AppNext = require('./App').default
+    try {
+      render(<AppContainer><AppNext /></AppContainer>, root)
+    } catch (e) {
+      render(<RedBox error={e} />, root)
+    }
+  })
+}

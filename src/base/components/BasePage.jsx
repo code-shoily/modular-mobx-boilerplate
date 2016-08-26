@@ -9,9 +9,9 @@ export default class BasePage extends Component {
       <div>
         <DevTools />
         <div>
-          <Link to='/'>Home</Link>
-          <Link to='/counter'>Counter</Link>
-          <Link to='/todo'>Todo</Link>
+          <Link to="/">Home</Link>
+          <Link to="/counter">Counter</Link>
+          <Link to="/todo">404</Link>
         </div>
         <div>
           {this.props.children}

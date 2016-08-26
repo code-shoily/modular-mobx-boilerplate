@@ -1,17 +1,20 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+var webpack = require('webpack')
+var WebpackDevServer = require('webpack-dev-server')
+var config = require('./webpack.config')
+var host = (process.env.HOST || 'localhost')
+var port = process.env.PORT  || 3000
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  inline: true,
   historyApiFallback: true,
-  stats: 'errors-only',
-}).listen(3000, 'localhost', function (err, result) {
+  stats: {
+    colors: true,
+  },
+}).listen(port, 'localhost', function (err) {
   if (err) {
-    console.log(err);
+    console.log(err)
   }
-  console.log('Listening at localhost:3000');
-});
 
+  console.log('Listening at ' + host + ':' + port)
+})
