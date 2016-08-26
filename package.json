@@ -1,6 +1,6 @@
 {
   "name": "modular-mobx-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "The mobx boilerplate I am currently using",
   "scripts": {
     "start": "node server.js",
