@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Router, hashHistory} from 'react-router'
+import {Router, browserHistory} from 'react-router'
 import {Provider} from 'mobx-react'
 
 import baseRoutes from './base/routes'
@@ -18,7 +18,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider {...stores}>
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
           {/* Other routes should come before base routes */}
           {counterRoutes}
           {baseRoutes}
