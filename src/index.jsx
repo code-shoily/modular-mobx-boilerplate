@@ -13,7 +13,7 @@ if(process.env.NODE_ENV === 'development') {
   a11y(React)
   whyDidYouUpdate(React)
   try {
-    render(<AppContainer><App /></AppContainer>, root)
+    renderx(<AppContainer><App /></AppContainer>, root)
   } catch (e) {
     render(<RedBox error={e} />, root)
   }

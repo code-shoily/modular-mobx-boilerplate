@@ -1,6 +1,8 @@
 import {observable, action} from 'mobx'
+import remotedev from 'mobx-remotedev'
 
 
+@remotedev
 export default class CounterModel {
   @observable counter
   constructor(counter=0) {
@@ -9,12 +11,12 @@ export default class CounterModel {
 
   @action('Increments the counter')
   increment() {
-    this.counter += 1
+    this.counter++
   }
 
   @action('Decrements the counter')
   decrement() {
-    this.counter -= 1
+    this.counter--
   }
 
   @action('Resets the counter')
