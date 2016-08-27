@@ -21,3 +21,7 @@ export default class BasePage extends Component {
     )
   }
 }
+
+BasePage.propTypes = {
+  children: React.PropTypes.array,
+}

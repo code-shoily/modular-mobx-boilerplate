@@ -10,7 +10,7 @@ var host = (process.env.HOST || 'localhost')
 var port = process.env.PORT || 3000
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
     'babel-polyfill',
@@ -22,6 +22,7 @@ module.exports = {
     path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
     publicPath: '/static/',
+    devtoolModuleFilenameTemplate: '/[absolute-resource-path]',
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.less'],

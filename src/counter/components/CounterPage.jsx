@@ -13,23 +13,30 @@ export default class CounterPage extends Component {
     let S = StyleSheet.create({
       container: {
         display: 'flex',
-        margin: '2em 0'
+        margin: '2em 0',
       },
       counter: {
         padding: '2rem',
         borderRadius: 12,
         background: '#eee',
-      }
+      },
     })
 
     return (
       <div className={css(S.container)}>
         <button onClick={() => counterModel.increment()}>+</button>
-        <span className={css(S.counter)} onDoubleClick={() => counterModel.reset()}>
+        <span
+          className={css(S.counter)}
+          onDoubleClick={() => counterModel.reset()}
+        >
           {counterModel.counter}
         </span>
         <button onClick={() => counterModel.decrement()}>-</button>
       </div>
     )
   }
+}
+
+CounterPage.propTypes = {
+  counterModel: React.PropTypes.object,
 }

@@ -12,11 +12,13 @@ const root = document.getElementById('root')
 if(process.env.NODE_ENV === 'development') {
   a11y(React)
   whyDidYouUpdate(React)
+
   try {
-    renderx(<AppContainer><App /></AppContainer>, root)
+    render(<AppContainer><App /></AppContainer>, root)
   } catch (e) {
     render(<RedBox error={e} />, root)
   }
+
 } else {
   render(<App />, root)
 }

@@ -8,7 +8,6 @@ import baseRoutes from './base/routes'
 import {counterModel} from './counter/models/counter'
 import counterRoutes from './counter/routes'
 
-
 const stores = {
   /*------ Initiate the Stores ------ */
   counterModel,

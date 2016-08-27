@@ -1,3 +1,4 @@
+
 module.exports = {
   extends: ["airbnb", "eslint:recommended", "plugin:react/recommended"],
   env: {
@@ -91,7 +92,7 @@ module.exports = {
     "react/no-set-state": 1,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 2,
-    "react/prefer-stateless-function": 1,
+    "react/prefer-stateless-function": 0,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
     "react/require-extension": 1,
