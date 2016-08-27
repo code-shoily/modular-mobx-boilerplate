@@ -62,7 +62,7 @@ module.exports = {
     "no-use-before-define": 2,
     "no-undef": 2,
     "no-unused-vars": 2,
-    "no-unused-expressions": 2,
+    "no-unused-expressions": 0,
     "no-lonely-if": 1,
     "no-nested-ternary": 1,
     "no-unneeded-ternary": 1,
