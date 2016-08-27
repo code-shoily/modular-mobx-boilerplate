@@ -5,7 +5,7 @@ export default class IndexPage extends Component {
   render() {
     return (
       <div>
-        INDEX PAGE
+        <marquee direction="right">INDEX PAGE - I KNOW IT LOOKS UGLY</marquee>
       </div>
     )
   }
