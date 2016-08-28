@@ -52,7 +52,7 @@ Testing: ``npm test`` or ``npm run test:watch`` for watching file change
 		|--routes.js //Routes specific to base app.
 	|--DemoApp
 	  |--components
-	    |--DemoAppBase.jsx //App-local Base component, may or may not inherit ../base/component/Base.jsx
+	    |--DemoAppBase.jsx //App-local Base component
 	    |--SampleDemoAppComponent.jsx //Any components
 	  |--models
 	    |--demo-model1.js //MobX stores, instantiated object is exported
@@ -61,7 +61,7 @@ Testing: ``npm test`` or ``npm run test:watch`` for watching file change
 		  |--demo-app.spec.js
 		|--routes.js //Routes specific to demo app
 	  App.js //The place that ties in all app subroutes and models and puts them in a provider.
-	  Index.jsx //The Main guy, App.js hot loading happens here, along with Redbox, a11y, why-did-you-update etc.
+	  Index.jsx //The Main guy, App.js hotloading happens here alongside Redbox, a11y etc
 ```
 
 Big thanks goes to the creator of [Reaxor](https://github.com/KadoBOT/reaxor) as I took a lot of ideas for setup from there. 
