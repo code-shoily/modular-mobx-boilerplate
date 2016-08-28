@@ -94,6 +94,11 @@ You can open up `src/App.js` to paste those imports and add the `todoAppModel` a
 
 Oops, I missed the `tests` folder!
 
+## TODO
+* Polishing up the script (I made it quickly and careless for my own projects, since it's just a code generator...)
+* Creating scripts to create `stores` or `components` under an already created app model
+* Putting some test cases in (I am new to the JS testing scenario)
+
 Big thanks goes to the creator of [Reaxor](https://github.com/KadoBOT/reaxor) as I took a lot of ideas for setup from there. 
 
 This is still very much a work in progress, as I work with it and discover new stuff, I'll be extracting them into here from my projects.
