@@ -1,5 +1,5 @@
-# Mobx + React + JS
-# modular-mobx-boilerplate
+# A boilerplate for using MobX/React with a modular folder structure
+### MobX + React + JavaScript + Aphrodite + Enzyme + Mocha + Hot-Loading + Redux DevTools
 
 This is a boilerplate for developing with React + MobX. It uses a modular structure of folders for larger apps.
 
