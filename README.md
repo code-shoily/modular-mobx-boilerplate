@@ -98,6 +98,7 @@ Oops, I missed the `tests` folder!
 * Polishing up the script (I made it quickly and careless for my own projects, since it's just a code generator...)
 * Creating scripts to create `stores` or `components` under an already created app model
 * Putting some test cases in (I am new to the JS testing scenario)
+* Make a cookbook style repository out of it with an app housing a particular recipe (i.e. OpenLayers Integration, Todo App, REST API Integration etc)
 
 Big thanks goes to the creator of [Reaxor](https://github.com/KadoBOT/reaxor) as I took a lot of ideas for setup from there. 
 
