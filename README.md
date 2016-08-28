@@ -39,31 +39,60 @@ Testing: ``npm test`` or ``npm run test:watch`` for watching file change
 ## Folder Structure
 ```
 ..root
-|--static //production bundle.js, css, js, images etc
-|--src
-	|--base
-	  |--components
-	    |--Base.jsx //Base component, stuff that all childrens will have
-	    |--SampleComponent.jsx //Any components
-	  |--models
-	    |--model1.js //MobX stores, instantiated object is exported
-	    |--model2.js
-		|--tests // Test specs
-		  |--browser.js
-		|--routes.js //Routes specific to base app.
-	|--DemoApp
-	  |--components
-	    |--DemoAppBase.jsx //App-local Base component
-	    |--SampleDemoAppComponent.jsx //Any components
-	  |--models
-	    |--demo-model1.js //MobX stores, instantiated object is exported
-	    |--demo-model2.js
-		|--tests // Test specs
-		  |--demo-app.spec.js
-		|--routes.js //Routes specific to demo app
+|-- static //production bundle.js, css, js, images etc
+|-- src
+	|-- base
+	  |-- components
+	    |-- Base.jsx //Base component, stuff that all childrens will have
+	    |-- SampleComponent.jsx //Any components
+	  |-- models
+	    |-- model1.js //MobX stores, instantiated object is exported
+	    |-- model2.js
+		|-- tests // Test specs
+		  |-- browser.js
+		|-- routes.js //Routes specific to base app.
+	|-- DemoApp
+	  |-- components
+	    |-- DemoAppBase.jsx //App-local Base component
+	    |-- SampleDemoAppComponent.jsx //Any components
+	  |-- models
+	    |-- demo-model1.js //MobX stores, instantiated object is exported
+	    |-- demo-model2.js
+		|-- tests // Test specs
+		  |-- demo-app.spec.js
+		|-- routes.js //Routes specific to demo app
 	  App.js //The place that ties in all app subroutes and models and puts them in a provider.
 	  Index.jsx //The Main guy, App.js hotloading happens here alongside Redbox, a11y etc
 ```
+
+## App Generation
+You can create new apps by using the `generator.py` script. For example, if you create `python generator.py todo-app` then it will create a `src/todo-app` folder and spit out the following message:
+
+```
+=== === Please add the following lines in the appropriate location in src/App.js === ===
+
+
+/* ------ TODO-APP APP --- --- */
+
+import todoAppRoutes from './todo-app/routes'
+import {todoAppModel} from './todo-app/models/todo-app'
+
+=== === Add the stores and routers in appropriate locations as marked === ===
+```
+
+You can open up `src/App.js` to paste those imports and add the `todoAppModel` and `{todoAppRoutes}` in the areas marked with comments. Then you can go to `/todo-app` to see a "Hello TodoApp" message. The new folder structure comforms with the one mentioned before:
+
+```
+|-- todo-app
+  |-- components
+    |-- TodoAppBase.jsx
+    |-- TodoAppPage.jsx
+  |-- models
+    |-- todo-app.js
+  routes.js
+```
+
+Oops, I missed the `tests` folder!
 
 Big thanks goes to the creator of [Reaxor](https://github.com/KadoBOT/reaxor) as I took a lot of ideas for setup from there. 
 
