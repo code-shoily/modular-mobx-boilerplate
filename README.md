@@ -25,7 +25,8 @@ In addition, the following awesome libs are used and configured up-
 
 ## Installation
 ```
-git clone https://github.com/code-shoily/modular-mobx-boilerplate.git
+git clone https://github.com/code-shoily/modular-mobx-boilerplate.git <your-project-name>
+cd <your-project-name>
 npm install
 npm start
 ```
