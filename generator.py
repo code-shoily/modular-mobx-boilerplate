@@ -29,7 +29,10 @@ export default class {0}Base extends Component {{
 }}
 
 {0}Base.propTypes = {{
-  children: React.PropTypes.array,
+  children: React.PropTypes.oneOfType([
+    React.PropTypes.arrayOf(React.PropTypes.node),
+    React.PropTypes.node,
+  ]),
 }}
     """.format(to_pascal_case(app))
 
