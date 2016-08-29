@@ -14,5 +14,8 @@ export default class CounterBase extends Component {
 }
 
 CounterBase.propTypes = {
-  children: React.PropTypes.array,
+  children: React.PropTypes.oneOfType([
+    React.PropTypes.arrayOf(React.PropTypes.node),
+    React.PropTypes.node,
+  ]),
 }
