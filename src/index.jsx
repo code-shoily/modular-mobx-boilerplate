@@ -11,7 +11,7 @@ const root = document.getElementById('root')
 
 if(process.env.NODE_ENV === 'development') {
   a11y(React)
-  whyDidYouUpdate(React)
+  //whyDidYouUpdate(React)
 
   try {
     render(<AppContainer><App /></AppContainer>, root)
